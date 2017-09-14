@@ -1,8 +1,14 @@
-function range(start,end) {
+function range(start,end,step) {
 	var rangeArry = [];
-	for(var i = start; i <= end; i++) {
-		rangeArry.push(i);
-	}
+	if(step == undefined)
+		for(var i = start; i <= end; i++)
+			rangeArry.push(i);
+	else if(step >= 0)
+		for(var i = start; i <= end; i += step)
+			rangeArry.push(i);
+	else
+		for(var i = start; i >= end; i += step)
+			rangeArry.push(i);
 	return rangeArry;
 }
 
@@ -13,4 +19,5 @@ function sum(arry) {
 	return sum;
 }
 
-console.log(sum(range(1,10)));
+console.log(range(10, 1 , -2));
+console.log(sum(range(1,10,2)));
