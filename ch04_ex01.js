@@ -6,4 +6,11 @@ function range(start,end) {
 	return rangeArry;
 }
 
-console.log(range(1,10));
+function sum(arry) {
+	var sum = 0;
+	for(var i = 0; i < arry.length; i++)
+		sum += arry[i];
+	return sum;
+}
+
+console.log(sum(range(1,10)));
