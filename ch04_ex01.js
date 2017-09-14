@@ -1,5 +1,7 @@
 function range(start,end,step) {
 	var rangeArry = [];
+	if(start > end && step == undefined)
+		step = -1;
 	if(step == undefined)
 		for(var i = start; i <= end; i++)
 			rangeArry.push(i);
