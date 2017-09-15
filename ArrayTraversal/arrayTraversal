@@ -3,4 +3,6 @@ function forEach(arr, func) {
 		func(arr[i]);
 }
 
-forEach(["Neethu", "Neenu", "Mintu"], console.log)
+var sum = 0;
+forEach([1, 2, 3], function(number) { sum += number; });
+console.log(sum);
