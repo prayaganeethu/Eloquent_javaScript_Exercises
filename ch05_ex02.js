@@ -38,18 +38,20 @@ let ANCESTRY_FILE = JSON.stringify([
   {"name": "Anna van Hecke", "sex": "f", "born": 1607, "died": 1670, "father": "Paschasius van Hecke", "mother": "Martijntken Beelaert"},
   {"name": "Maria Sturm", "sex": "f", "born": 1835, "died": 1917, "father": "Charles Sturm", "mother": "Seraphina Spelier"},
   {"name": "Jacobus Bernardus van Brussel", "sex": "m", "born": 1736, "died": 1809, "father": "Jan van Brussel", "mother": "Elisabeth Haverbeke"}
-]);
+])
 
-let ancestry = JSON.parse(ANCESTRY_FILE);
+let ancestry = JSON.parse(ANCESTRY_FILE)
 
-function average(array) {
-  function plus(a, b) { return a + b; }
-  return array.reduce(plus) / array.length;
+function average (array) {
+  function plus (a, b) { return a + b }
+  return array.reduce(plus) / array.length
 }
 
-let byName = {};
-ancestry.forEach(function(person) {
-  byName[person.name] = person;
-});
+var byName = {}
+ancestry.forEach(function (person) {
+  byName[person.name] = person
+})
 
+console.log(average(ancestry.map((ancestor, index, ancestry) => { if (ancestor.mother) if (byName[ancestor.mother] !== undefined) return ancestor.born - byName[ancestor.mother].born }).filter((ageDiff) => { if (ageDiff !== undefined) return ageDiff })))
 
+// → 31.2
