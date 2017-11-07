@@ -4,12 +4,14 @@ function deepEqual (valA, valB) {
   else {
     if (typeof valA !== 'object') return (valA === valB)
     else {
+      if (Object.keys(valA).length !== Object.keys(valB).length) return false
       for (let key in valA) {
+        if (!(key in valB)) return false
         let flag = deepEqual(valA[key], valB[key])
         if (flag === false) return false
       }
+      return true
     }
-    return true
   }
 }
 
