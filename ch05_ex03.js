@@ -7,13 +7,21 @@ function average (array) {
   return array.reduce(plus) / array.length
 }
 
-let centObj = {}
+function groupBy (array, func) {
+  return func(array)
+}
 
-ancestry.forEach(function (person) {
-  let century = Math.ceil(person.died / 100)
-  if (!(century in centObj)) centObj[century] = []
-  centObj[century].push(person.died - person.born)
-})
+function group (array) {
+  let centObj = {}
+  array.forEach(function (person) {
+    let century = Math.ceil(person.died / 100)
+    if (!(century in centObj)) centObj[century] = []
+    centObj[century].push(person.died - person.born)
+  })
+  return centObj
+}
+
+let centObj = groupBy(ancestry, group)
 
 for (let key in centObj) {
   console.log(key, ':', average(centObj[key]).toFixed(1))
