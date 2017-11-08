@@ -1,12 +1,10 @@
 function every (array, func) {
-  let resArr = array.map(func)
-  for (let res of resArr) if (res === false) return false
+  for (let i of array) if (func(i) === false) return false
   return true
 }
 
 function some (array, func) {
-  let resArr = array.map(func)
-  for (let res of resArr) if (res === true) return true
+  for (let i of array) if (func(i) === true) return true
   return false
 }
 
