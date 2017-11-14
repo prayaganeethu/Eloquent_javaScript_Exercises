@@ -5,7 +5,9 @@ let geekSkool = {
   }
 }
 
-Object.defineProperty(geekSkool, 'addMember', {set: function (name) { this.names.push(name) }})
+let expr = 'addMember'
+
+Object.defineProperty(geekSkool, [expr], {set: function (name) { this.names.push(name) }})
 
 // delete geekSkool.addMember
 
