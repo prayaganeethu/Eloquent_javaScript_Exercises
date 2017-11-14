@@ -6,4 +6,6 @@ let geekSkool = {
   }
 }
 
+delete geekSkool.newMember
+
 console.log(geekSkool.newMember)
