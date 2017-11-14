@@ -8,5 +8,8 @@ let geekSkool = {
   }
 }
 
+delete geekSkool.addMember
+
 geekSkool.addMember = 'Neethu'
+
 console.log(geekSkool.names)
