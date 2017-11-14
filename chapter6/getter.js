@@ -2,7 +2,8 @@ let geekSkool = {
   names: ['Neethu', 'Donna', 'Isha', 'Soumya']
 }
 
-Object.defineProperty(geekSkool, 'newMember', { get: function () {
+let expr = 'newMember'
+Object.defineProperty(geekSkool, [expr], { get: function () {
   if (this.names.length === 0) return undefined
   return this.names[this.names.length - 1]
 }})
