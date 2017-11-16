@@ -12,12 +12,12 @@ ArraySeq.prototype.length = function () {
   return length
 }
 
-ArraySeq.prototype.current = function (pos) {
+ArraySeq.prototype.element = function (pos) {
   return this.array[pos]
 }
 
 function logFive (seq) {
-  for (let i = 0; i < 5 && i < seq.length(); i++) console.log(seq.current(i))
+  for (let i = 0; i < 5 && i < seq.length(); i++) console.log(seq.element(i))
 }
 
 function RangeSeq (from, to) {
@@ -36,7 +36,7 @@ RangeSeq.prototype.length = function () {
   return length
 }
 
-RangeSeq.prototype.current = function (pos) {
+RangeSeq.prototype.element = function (pos) {
   return this.array[pos]
 }
 
